@@ -15,7 +15,7 @@ from datetime import datetime
 
 class BorderModelChoiceField(forms.ModelChoiceField):
     def label_from_instance(self, object):
-        return "%s | %s" % (object.region, object.ukr)
+        return "%s | %s" % (object.code, object.name)
 
 
 class DocumentModelChoiceField(forms.ModelChoiceField):

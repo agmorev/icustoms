@@ -37,7 +37,9 @@ class Entry(models.Model):
     passport = models.ForeignKey(
         Document,
         on_delete=models.DO_NOTHING,
-        related_name='doc')
+        related_name='doc',
+        null=True,
+        blank=False)
     departure = CountryField(
         _('країна відправлення'),
         blank_label=_('Оберіть країну...'),

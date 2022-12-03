@@ -5,5 +5,5 @@ from .models import BorderPoint
 
 @admin.register(BorderPoint)
 class BorderPointAdmin(ImportExportModelAdmin):
-    list_display = ['id', 'region', 'code', 'ukr',
-                    'location', 'index', 'street']
+    list_display = ['id', 'code', 'name',
+                    'address']

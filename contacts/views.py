@@ -47,7 +47,7 @@ class ContactFormView(FormView):
                 subject,
                 SafeString(contact_message),
                 contact_email,
-                ['contacts@icustoms.info', ],
+                ['agmorev@gmail.com', ],
             )
             msg.content_subtype = "html"
             msg.send()

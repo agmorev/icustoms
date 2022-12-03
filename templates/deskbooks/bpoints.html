@@ -7,9 +7,9 @@
 {% block pageheader %}
   {% trans "Митні органи" %}
 {% endblock pageheader %}
-                  
+
 {% block content %}
-    
+
 	<div class="card">
 		<div class="card-header">
 			<h3 class="card-title">
@@ -28,23 +28,17 @@
 						<table class="table table-bordered table-hover dataTable dtr-inline" role="grid">
 							<thead>
 								<tr role="row">
-									<th>{% trans "Область" %}</th>
 									<th>{% trans "Код підрозділу" %}</th>
 									<th>{% trans "Назва" %}</th>
-									<th>{% trans "Населений пункт" %}</th>
-									<th>{% trans "Індекс" %}</th>
 									<th>{% trans "Адреса" %}</th>
 								</tr>
 							</thead>
 							<tbody>
-								{% for point in object_list %}				
+								{% for point in object_list %}
 								<tr role="row" class="odd">
-									<td>{{ point.region }}</td>
 									<td>{{ point.code }}</td>
-									<td>{{ point.ukr }}</td>
-									<td>{{ point.location}}</td>
-									<td>{{ point.index }}</td>
-									<td>{{ point.street }}</td>
+									<td>{{ point.name }}</td>
+									<td>{{ point.address }}</td>
 								</tr>
 								{% endfor %}
 							</tbody>
@@ -69,7 +63,7 @@
 										{% if page_obj.number == page %}
 											<li class="page-item active" aria-current="page">
 												<span   class="page-link"
-														style=" background-color: gray; 
+														style=" background-color: gray;
 																border-color: gray;">
 														{{ page }}
 													<span class="sr-only">(current)</span>

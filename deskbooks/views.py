@@ -10,4 +10,4 @@ class BordersListView(ListView):
     paginate_by = 20
 
     def get_queryset(self):
-        return BorderPoint.objects.all().order_by('region')
+        return BorderPoint.objects.all().order_by('code')

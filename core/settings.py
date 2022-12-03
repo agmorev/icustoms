@@ -15,7 +15,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'ys4+=!h@v)r$g==vsq107#&kkkp$asf^50&iu)gtwxwps#=e*u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -95,9 +95,17 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #   # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     'NAME': '/home/agmorev/icustoms/db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'agmorev$icustoms',
+        'USER': 'agmorev',
+        'PASSWORD': 'Mi4Car6p',
+        'HOST': 'agmorev.mysql.pythonanywhere-services.com',
     }
 }
 
@@ -139,8 +147,10 @@ DATETIME_FORMAT = 'd.m.Y H:i'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [STATIC_DIR, ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles'), ]
+# "/home/myusername/myproject/static"
+STATIC_ROOT = "/home/agmorev/icustoms/static"
+# os.path.join(BASE_DIR, 'staticfiles')
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # WHITENOISE_MANIFEST_STRICT = False
 
@@ -167,7 +177,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
 # Provider specific settings

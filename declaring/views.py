@@ -131,7 +131,7 @@ class EntrySendEmail(DetailView):
         msg = EmailMessage(
             _('Ваша митна декларація'),
             _('У додатку до цього листа надіслано підготовлену Вами митну декларацію'),
-            'info@icustoms.info',
+            'agmorev@gmail.com',
             [request.user.email],
         )
         msg.content_subtype = "html"
